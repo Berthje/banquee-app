@@ -32,6 +32,9 @@ const BankCard = ({ account, userName, showBalance = true }: CreditCardProps) =>
 
             <Image src="/icons/lines.png" width={316} height={190} alt="lines" className="absolute top-0 left-0" />
         </Link>
+
+
+        {/* copy card nr */}
     </div>
   )
 }
