@@ -33,12 +33,14 @@ const MobileNav = ({ user }: MobileNavProps) => {
                                 const isActive = pathname === link.route || pathname.startsWith(`${link.route}/`);
 
                                 return (
-                                    <Link href={link.route} key={link.label} className={cn('sidebar-link', {'bg-bank-gradient': isActive})}>
-                                        <div className="relative size-6">
-                                            <Image src={link.imgURL} alt={link.label} fill className={cn({'brightness-[3] invert-0': isActive})}/>
-                                        </div>
-                                        <p className={cn('sidebar-label', {'!text-white': isActive})}>{link.label}</p>
-                                    </Link>
+                                    <SheetClose asChild key={link.route}>
+                                        <Link href={link.route} key={link.label} className={cn('sidebar-link', {'bg-bank-gradient': isActive})}>
+                                            <div className="relative size-6">
+                                                <Image src={link.imgURL} alt={link.label} fill className={cn({'brightness-[3] invert-0': isActive})}/>
+                                            </div>
+                                            <p className={cn('sidebar-label', {'!text-white': isActive})}>{link.label}</p>
+                                        </Link>
+                                    </SheetClose>
                                 )
                             })}
                             </nav>
